@@ -14,7 +14,7 @@ import java.util.List;
 public class CarsController {
 
     @GetMapping(value = "/cars")
-    public String printWelcome(@RequestParam(value = "count", required = false) long count,
+    public String printWelcome(@RequestParam(value = "count", required = false) Long count,
                                Model model) {
         CarService carService = new CarServiceImpl();
 
@@ -23,6 +23,10 @@ public class CarsController {
         carService.add(new Car("hyundai", "3542", "87"));
         carService.add(new Car("lada", "4123", "32"));
         carService.add(new Car("audi", "5551", "11"));
+
+        if (count == null) {
+            count = (long) 5;
+        }
 
         List<Car> cars = carService.getAllCars(count);
 
