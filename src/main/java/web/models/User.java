@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "users")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -45,4 +46,6 @@ public class User {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
+    //todo: не достает toString, equals/hashCode
 }

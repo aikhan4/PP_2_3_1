@@ -15,15 +15,19 @@ public class UserServiceImpl implements UserService {
     public void add(User user) {
         userDao.add(user);
     }
+
     public List<User> getAllUsers() {
         return userDao.getAllUsers();
     }
+
     public void deleteUser(Long id) {
         userDao.deleteUser(id);
     }
+
     public void changeUser(Long id, String name, String surname) {
         userDao.changeUser(id, name, surname);
     }
+
     public User getUser(Long id) {
         return userDao.getUser(id);
     }
